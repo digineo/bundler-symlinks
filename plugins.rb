@@ -5,6 +5,9 @@ Bundler::Plugin.add_hook('after-install') do |arg|
 
   if !source.respond_to?(:path) || source.path.to_s != "."
     FileUtils.mkdir_p(gems_dir)
-    FileUtils.ln_sf(gem_path, "#{gems_dir}/#{arg.name}")
+
+    link_name = "#{gems_dir}/#{arg.name}"
+    File.unlink(link_name) if File.exists?(link_name)
+    File.symlink(gem_path, link_name)
   end
 end
