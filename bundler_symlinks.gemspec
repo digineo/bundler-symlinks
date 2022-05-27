@@ -1,7 +1,7 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "bundler-symlinks"
-  spec.version       = "0.1.0"
+  spec.version       = "0.1.1"
   spec.authors       = ["Julian Kornberger"]
   spec.email         = ["jk+github@digineo.de"]
 

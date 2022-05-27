@@ -1,3 +1,5 @@
+require "fileutils"
+
 Bundler::Plugin.add_hook('after-install') do |arg|
   gems_dir = Bundler.app_config_path.join("gems")
   gem_path = arg.spec.full_gem_path
