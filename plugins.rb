@@ -9,7 +9,7 @@ Bundler::Plugin.add_hook('after-install') do |arg|
     FileUtils.mkdir_p(gems_dir)
 
     link_name = "#{gems_dir}/#{arg.name}"
-    File.unlink(link_name) if File.exists?(link_name)
+    File.unlink(link_name) if File.exist?(link_name)
     File.symlink(gem_path, link_name)
   end
 end
